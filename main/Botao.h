@@ -6,7 +6,7 @@
 class Botao {
   private:
     uint8_t _pinout;
-    bool _valorLido, _ultimoValor, _estadoBotao, _leituraBotao;
+    bool _valorLido, _ultimoValor, _estadoBotao, _leituraBotao, _retorno;
     long _ultimoClique = 50, _ultimaVariacao;
     const bool _botaoPressionado = false;
 

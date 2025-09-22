@@ -7,7 +7,7 @@ Menu::Menu()
 
 void Menu::inicializar()
 {
-  
+  Serial.println("Inicializado!");
 }
 
 void Menu::cursorDireita()

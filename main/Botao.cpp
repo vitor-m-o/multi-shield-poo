@@ -10,10 +10,7 @@ Botao::Botao(uint8_t pinout)
 void Botao::ler()
 {
   this->_valorLido = digitalRead(this->_pinout);
-}
-
-void Botao::detectarBorda()
-{
+  
   if (this->_valorLido != this->_ultimoValor)
   {
     this->_ultimaVariacao = millis();
@@ -28,14 +25,30 @@ void Botao::detectarBorda()
       {
         this->_leituraBotao = true;
       }
+      else
+      {
+        this->_leituraBotao = false;
+      }
     }
   }
-  else
+
+  if (this->_leituraBotao != this->_ultimoValor)
   {
-    this->_leituraBotao = false;
+    if (this->_leituraBotao)
+    {
+      this->_retorno = true;
+    }
+    else
+    {
+      this->_retorno = false;
+    }
   }
 
-  this->_ultimoValor = this->_valorLido;
+}
+
+void Botao::detectarBorda()
+{
+  this->_ultimoValor = this->_leituraBotao;
 }
 
 bool Botao::pressionado()

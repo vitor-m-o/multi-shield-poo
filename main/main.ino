@@ -114,6 +114,7 @@ void loop()
   {
     menuShield.cursorDireita();
   }
+  Serial.println(botaoEsquerda.pressionado());
 
   menuShield.imprimirMenu();
 
